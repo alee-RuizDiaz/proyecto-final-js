@@ -25,7 +25,6 @@
 .containerProductos {
     display: flex;
     flex-flow: row wrap;
-    height: 80%;
     border: 3px solid black;
 }
 

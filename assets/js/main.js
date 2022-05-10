@@ -106,3 +106,13 @@ let botonPantalones = document.getElementById("filtroPantalones");
 botonPantalones.addEventListener ("click", () => {
     productosTienda(listaDePantalones);
 });
+
+// Agregar al localStorage 
+
+const guardarLocal = (clave, valor) => {
+    localStorage.setItem(clave, valor);
+};
+
+for (const producto of listaDeProductos) {
+    guardarLocal( producto.id , JSON.stringify(producto));
+};
