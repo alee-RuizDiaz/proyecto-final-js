@@ -1,27 +1,16 @@
 
 // El registro de Remeras y pantalones
 
-class Remera {
-    constructor(id, nombre, descripcion, foto,  precio) {
+class Producto {
+    constructor(id, nombre, tipo, descripcion, foto,  precio) {
         this.id = id;
         this.nombre = nombre;
+        this.tipo = tipo;
         this.descripcion = descripcion;
         this.foto = foto;
         this.precio = precio;
     }
 };
-
-class Pantalon {
-    constructor(id, nombre, descripcion, foto, precio) {
-        this.id = id;
-        this.nombre = nombre;
-        this.descripcion = descripcion;
-        this.foto = foto;
-        this.precio = precio;
-    }
-};
-
-
 
 
 // Variable con rutas
@@ -35,21 +24,27 @@ const rutaFotosPantalon = /assets/image/pantalones/;
 // Lista de todos los productos
 
 let listaDeProductos = [
-    new Remera(1, "Lacoste", "Remera Celeste Lacoste Roules", "./assets/image/remeras/remera1.webp", 6.499),
-    new Remera(2, "Levi's", "Remera Blanca Levi's Misssion Tee", "./assets/image/remeras/remera2.webp", 4.499),
-    new Pantalon(3, "Reef", "Pantalon Negro Reef Dunes", "./assets/image/pantalones/pantalon1.webp", 12.599)
+    new Producto(1, "Lacoste", "Remera", "Remera Celeste Lacoste Roules", "./assets/image/remeras/remera1.webp", 6.499),
+    new Producto(2, "Levi's", "Remera", "Remera Blanca Levi's Misssion Tee", "./assets/image/remeras/remera2.webp", 4.499),
+    new Producto(3, "Reef", "Pantalon", "Pantalon Negro Reef Dunes", "./assets/image/pantalones/pantalon1.webp", 12.599)
 ];
 
+// Filtro de productos
 
-let listaDeRemeras = [
-    new Remera(1, "Lacoste", "Remera Celeste Lacoste Roules", "./assets/image/remeras/remera1.webp", 6.499),
-    new Remera(2, "Levi's", "Remera Blanca Levi's Misssion Tee", "./assets/image/remeras/remera2.webp", 4.499)
-];
+const listaDeRemeras = listaDeProductos.filter( (el) => el.tipo.includes("Remera")); // Me filtra la lista de Remeras
+//console.log(listaDeRemeras);
+const listaDePantalones = listaDeProductos.filter( (el) => el.tipo.includes("Pantalon")); // Me Filtra la lista de Pantalones
+//console.log(listaDePantalones);
 
 
-let listaDePantalones = [
-    new Pantalon(3, "Reef", "Pantalon Negro Reef Dunes", "./assets/image/pantalones/pantalon1.webp", 12.599)
-];
+// Filtrado y lista de Precios
+
+let precioMenor = listaDeProductos.sort( (a, b) => a.precio - b.precio);
+console.log(precioMenor);
+
+
+let precioMayor = listaDeProductos.sort( (a,b) => b.precio - a.precio);
+console.log(precioMayor);
 
 
 // Funcion para que muestre todos los productos de la tienda
@@ -106,6 +101,16 @@ let botonPantalones = document.getElementById("filtroPantalones");
 botonPantalones.addEventListener ("click", () => {
     productosTienda(listaDePantalones);
 });
+
+// Boton precio Mayor
+
+let botonPrecioMayor = document.getElementById("filtroMayorPrecio");
+
+botonPrecioMayor.addEventListener("click", () => {
+    productosTienda(precioMayor);
+    console.log(botonPrecioMayor);
+})
+
 
 // Agregar al localStorage 
 
