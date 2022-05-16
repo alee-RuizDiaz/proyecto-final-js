@@ -39,25 +39,27 @@ const listaDePantalones = listaDeProductos.filter( (el) => el.tipo.includes("Pan
 
 // Filtrado y lista de Precios
 
-let precioMenor = listaDeProductos.sort( (a, b) => a.precio - b.precio);
-console.log(precioMenor);
 
+function precioMenor () {
+    return listaDeProductos.sort( (a, b) => a.precio - b.precio);
+}
 
-let precioMayor = listaDeProductos.sort( (a,b) => b.precio - a.precio);
-console.log(precioMayor);
+function precioMayor() {
+    return listaDeProductos.sort( (a, b) => b.precio - a.precio)
+}
 
 
 // Funcion para que muestre todos los productos de la tienda
 
 let carta = "";
 
-function cartaProducto(producto){
+function cartaProducto({foto, nombre, descripcion, precio}){
     carta = `<div class="card my-3 mx-2" style="width: 18rem;">
-                <img src="${producto.foto}" class="card-img-top" alt="...">
+                <img src="${foto}" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">${producto.nombre}</h5>
-                    <p class="card-text">${producto.descripcion}</p>
-                    <p>$ ${producto.precio}</p>
+                    <h5 class="card-title">${nombre}</h5>
+                    <p class="card-text">${descripcion}</p>
+                    <p>$ ${precio}</p>
                     <a href="#" class="btn btn-primary">Agregar a carrito</a>
                 </div>
             </div>`
@@ -107,10 +109,18 @@ botonPantalones.addEventListener ("click", () => {
 let botonPrecioMayor = document.getElementById("filtroMayorPrecio");
 
 botonPrecioMayor.addEventListener("click", () => {
-    productosTienda(precioMayor);
+    productosTienda(precioMayor());
     console.log(botonPrecioMayor);
 })
 
+// Boton precio Menor
+
+let botonPrecioMenor = document.getElementById("filtroMenorPrecio");
+
+botonPrecioMenor.addEventListener("click", () => {
+    productosTienda(precioMenor());
+    console.log(botonPrecioMenor);
+})
 
 // Agregar al localStorage 
 
@@ -121,3 +131,4 @@ const guardarLocal = (clave, valor) => {
 for (const producto of listaDeProductos) {
     guardarLocal( producto.id , JSON.stringify(producto));
 };
+
