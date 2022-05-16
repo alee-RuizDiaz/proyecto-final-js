@@ -110,7 +110,6 @@ let botonPrecioMayor = document.getElementById("filtroMayorPrecio");
 
 botonPrecioMayor.addEventListener("click", () => {
     productosTienda(precioMayor());
-    console.log(botonPrecioMayor);
 })
 
 // Boton precio Menor
@@ -119,7 +118,6 @@ let botonPrecioMenor = document.getElementById("filtroMenorPrecio");
 
 botonPrecioMenor.addEventListener("click", () => {
     productosTienda(precioMenor());
-    console.log(botonPrecioMenor);
 })
 
 // Agregar al localStorage 
