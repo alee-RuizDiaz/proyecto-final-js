@@ -1,3 +1,4 @@
+
 #particles-js {
     height: 100vh;
     width: 100%;
@@ -5,42 +6,58 @@
     z-index: -1;
 }
 
+.container {
+    padding: 0;
+}
+
 .containerStyle {
     height: auto;
     z-index: 99;
-    opacity: 0.85;
+    opacity: 0.90;
     background-color: #d3d3d3;
-    border-left: 3px solid rgb(122, 122, 122);
-    border-right: 3px solid rgb(122, 122, 122);
 }
 
-.filtroProductos {
+.banners {
     display: flex;
-    flex-direction: column;
-    height: 15rem;
-    border: 3px solid black;
+    flex-direction: row;
+    width: 100%;
 
+}
+
+.imgBanner {
+    width: 100%;
 }
 
 .containerProductos {
     display: flex;
-    flex-flow: row wrap;
-    border: 3px solid black;
+    flex-flow: column wrap;
 }
 
+/*
+.carrito-wrapper {
+    position: absolute;
+    right: -350px;
+    min-height: 100vh;
+    background-color: #d3d3d3;
+    width: 350px;
+    
+}
+*/
 
 .filtroPrecios {
     display: flex;
-    flex-flow: column wrap;
-    width: 25%;
-    border-right: 3px solid black;
+    flex-flow: row wrap;
+    justify-content: center;
+    width: 100%;
+    border-top: 4px solid rgb(33,37,41);
+    border-bottom: 4px solid rgb(33,37,41);
 
 }
 
 .sectionProductos {
     display: flex;
     flex-direction: column;
-    width: 75%;
+    width: 100%;
 }
 
 .productosFlex {
@@ -48,13 +65,16 @@
     flex-flow: row wrap;
 }
 
-.tituloFiltro {
-    font-size: 2rem;
-    text-align: center;
+.botonFiltro {
+    font-size: 1.2rem;
+    background-color: rgb(33,37,41);
+    color: white;
 }
 
-.botonFiltro {
-    font-size: 1.5rem;
+.buttonCompra:hover {
+    background-color: darkviolet;
+    border: none;
+    color: white;
 }
 
 .card {

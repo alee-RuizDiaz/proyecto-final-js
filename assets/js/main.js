@@ -26,6 +26,8 @@ const rutaFotosPantalon = /assets/image/pantalones/;
 let listaDeProductos = [
     new Producto(1, "Lacoste", "Remera", "Remera Celeste Lacoste Roules", "./assets/image/remeras/remera1.webp", 6.499),
     new Producto(2, "Levi's", "Remera", "Remera Blanca Levi's Misssion Tee", "./assets/image/remeras/remera2.webp", 4.499),
+    new Producto(3, "Reef", "Pantalon", "Pantalon Negro Reef Dunes", "./assets/image/pantalones/pantalon1.webp", 12.599),
+    new Producto(3, "Reef", "Pantalon", "Pantalon Negro Reef Dunes", "./assets/image/pantalones/pantalon1.webp", 12.599),
     new Producto(3, "Reef", "Pantalon", "Pantalon Negro Reef Dunes", "./assets/image/pantalones/pantalon1.webp", 12.599)
 ];
 
@@ -53,14 +55,14 @@ function precioMayor() {
 
 let carta = "";
 
-function cartaProducto({foto, nombre, descripcion, precio}){
+function cartaProducto({foto, nombre, descripcion, precio}){        // Desestructuracion del objeto en la Array 
     carta = `<div class="card my-3 mx-2" style="width: 18rem;">
                 <img src="${foto}" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">${nombre}</h5>
                     <p class="card-text">${descripcion}</p>
                     <p>$ ${precio}</p>
-                    <a href="#" class="btn btn-primary">Agregar a carrito</a>
+                    <a href="#" class="btn btn-dark buttonCompra" id="addCarrito">Agregar a carrito</a>
                 </div>
             </div>`
             
@@ -104,21 +106,18 @@ botonPantalones.addEventListener ("click", () => {
     productosTienda(listaDePantalones);
 });
 
-// Boton precio Mayor
+// Libreria sweetAlert
 
-let botonPrecioMayor = document.getElementById("filtroMayorPrecio");
+let carrito = document.querySelector(".buttonCompra");
 
-botonPrecioMayor.addEventListener("click", () => {
-    productosTienda(precioMayor());
-})
-
-// Boton precio Menor
-
-let botonPrecioMenor = document.getElementById("filtroMenorPrecio");
-
-botonPrecioMenor.addEventListener("click", () => {
-    productosTienda(precioMenor());
-})
+carrito.addEventListener ("click", () => {
+    Swal.fire({
+        icon: 'success',
+        title: 'Su producto fue agregado al carrito',
+        showConfirmButton: false,
+        timer: 1400
+      });
+});
 
 // Agregar al localStorage 
 
