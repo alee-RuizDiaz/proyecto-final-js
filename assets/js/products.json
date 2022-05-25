@@ -1,0 +1,29 @@
+[{
+    "id": 1,
+    "title": "Lacoste",
+    "price": 6.499,
+    "description": "Remera Celeste Lacoste Roules",
+    "category": "Remera",
+    "image": "./assets/image/remeras/remera1.webp"
+}, {
+    "id": 2,
+    "title": "Levi's",
+    "price": 4.499,
+    "description": "Remera Blanca Levi's Misssion Tee",
+    "category": "Remera",
+    "image": "./assets/image/remeras/remera2.webp"
+}, {
+    "id": 3,
+    "title": "Reef",
+    "price": 12.599,
+    "description": "Pantalon negro Reef Dunes",
+    "category": "Pantalon",
+    "image": "./assets/image/pantalones/pantalon1.webp"
+}, {
+    "id": 3,
+    "title": "Reef",
+    "price": 12.599,
+    "description": "Pantalon negro Reef Dunes",
+    "category": "Pantalon",
+    "image": "./assets/image/pantalones/pantalon1.webp"
+}]
