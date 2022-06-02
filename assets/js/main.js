@@ -1,56 +1,61 @@
+// Variables y constantes 
 
-// El registro de Remeras y pantalones
-
-/*
-class Producto {
-    constructor(id, nombre, tipo, descripcion, foto,  precio) {
-        this.id = id;
-        this.nombre = nombre;
-        this.tipo = tipo;
-        this.descripcion = descripcion;
-        this.foto = foto;
-        this.precio = precio;
-    }
-};
+const botonRemeras = document.getElementById("filtroRemeras");
+const botonPantalones = document.getElementById("filtroPantalones");
+const botonTodos = document.getElementById("filtroTodos");
+const botonCamperas = document.getElementById("filtroCamperas");
+const botonCamisas = document.getElementById("filtroCamisas");
+const botonBuzos = document.getElementById("filtroBuzos");
+let carta = "";
 
 
-// Lista de todos los productos
-                           
-let listaDeProductos = [
-    new Producto(1, "Lacoste", "Remera", "Remera Celeste Lacoste Roules", "./assets/image/remeras/remera1.webp", 6.499),
-    new Producto(2, "Levi's", "Remera", "Remera Blanca Levi's Misssion Tee", "./assets/image/remeras/remera2.webp", 4.499),
-    new Producto(3, "Reef", "Pantalon", "Pantalon Negro Reef Dunes", "./assets/image/pantalones/pantalon1.webp", 12.599),
-    new Producto(3, "Reef", "Pantalon", "Pantalon Negro Reef Dunes", "./assets/image/pantalones/pantalon1.webp", 12.599),
-    new Producto(3, "Reef", "Pantalon", "Pantalon Negro Reef Dunes", "./assets/image/pantalones/pantalon1.webp", 12.599)
-];
-*/
+// Funcion que me arma el cuerpo de la carta de productos
 
+function cartaProducto({ image, title, description, price, id}) {
+    carta = `<div class="card my-3 mx-2" style="width: 18rem;">
+                <img src="${image}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">${title}</h5>
+                    <p class="card-text">${description}</p>
+                    <p>$ ${price}</p>
+                    <a href="#" class="btn btn-dark buttonCompra" id="${id}">Agregar a carrito</a>
+                </div>
+            </div>`
 
+    return (carta);
+}
+    
 
+// Utilizo el fetch para llamar el json de productos y los agrego a todos en el HTML con DOM.
 
-function listaDeProductos ()  {
+function listaDeProductos() {
     fetch("./assets/js/products.json")
         .then((resp) => resp.json())
         .then((data) => {
-            data.forEach ((productos) => {
-                let productosTienda = document.querySelector("#productos");
-                productosTienda.innerHTML += `
-                        <div class="card my-3 mx-2" style="width: 18rem;">
-                            <img src="${productos.image}" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">${productos.title}</h5>
-                                <p class="card-text">${productos.descripcion}</p>
-                                <p>$ ${productos.price}</p>
-                                <a href="#" class="btn btn-dark buttonCompra" id="addCarrito">Agregar a carrito</a>
-                            </div>
-                        </div>
-                    `
+            let productosTienda = document.getElementById("productos");
+            productosTienda.innerHTML = "";
+            for (let i = 0; i < data.length; i++) {
+                productosTienda.innerHTML += cartaProducto(data[i]);
+            };
+            let addCarrito = document.querySelectorAll(".buttonCompra");
+            addCarrito.forEach((alertaCarrito) => {
+                alertaCarrito.addEventListener("click", SweetAlert)
             })
         })
 };
 
+listaDeProductos();
 
-window.onload = listaDeProductos() 
+// Libreria sweetalert al clickear Agregar al carrito
+
+function SweetAlert() {
+    Swal.fire({
+        icon: 'success',
+        title: 'Su producto fue agregado al carrito',
+        showConfirmButton: false,
+        timer: 1400
+      }); 
+}
 
 
 // Filtro de productos
@@ -65,39 +70,6 @@ console.log(listaDeRemeras);
 /*
 const listaDePantalones = listaDeProductos.filter( (el) => el.tipo.includes("Pantalon")); // Me Filtra la lista de Pantalones
 //console.log(listaDePantalones);
-*/
-
-// Funcion para que muestre todos los productos de la tienda
-
-/*
-let carta = "";
-
-function cartaProducto({foto, nombre, descripcion, precio}){        // Desestructuracion del objeto en la Array 
-    carta = `<div class="card my-3 mx-2" style="width: 18rem;">
-                <img src="${foto}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">${nombre}</h5>
-                    <p class="card-text">${descripcion}</p>
-                    <p>$ ${precio}</p>
-                    <a href="#" class="btn btn-dark buttonCompra" id="addCarrito">Agregar a carrito</a>
-                </div>
-            </div>`
-            
-    return(carta);
-
-}
-
-
-function productosTienda (listaDeProductos) {
-    let productosTienda = document.getElementById("productos");
-    productosTienda.innerHTML = "";
-
-    for (let i = 0; i < listaDeProductos.length; i++) {
-        productosTienda.innerHTML += cartaProducto(listaDeProductos[i]);
-    };
-}
-
-window.onload = productosTienda(listaDeProductos);
 */
 
 
@@ -151,4 +123,3 @@ for (const producto of listaDeProductos()) {
     guardarLocal( producto.id , JSON.stringify(producto));
 };
 */
-
