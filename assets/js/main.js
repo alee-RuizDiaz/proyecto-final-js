@@ -39,7 +39,7 @@ function listaDeProductos() {
             };
             let addCarrito = document.querySelectorAll(".buttonCompra");
             addCarrito.forEach((alertaCarrito) => {
-                alertaCarrito.addEventListener("click", SweetAlert)
+                alertaCarrito.addEventListener("click", AgregarCarrito)
             })
         })
 };
@@ -48,7 +48,7 @@ listaDeProductos();
 
 // Libreria sweetalert al clickear Agregar al carrito
 
-function SweetAlert() {
+function AgregarCarrito() {
     Swal.fire({
         icon: 'success',
         title: 'Su producto fue agregado al carrito',
@@ -57,8 +57,26 @@ function SweetAlert() {
       }); 
 }
 
+// Carrito desplegable 
+
+window.onload = function () {
+
+    let body = document.getElementsByTagName('body');
+    let botCart = document.getElementById('viewCart');
+    let closeCart = document.getElementById('closeCart');
+    botCart.onclick = function(e) {
+        e.preventDefault();
+        body[0].classList.toggle("view-cart");
+    }
+    closeCart.onclick = function(e) {
+        e.preventDefault();
+        body[0].classList.toggle("view-cart");
+    }
+
+}
 
 // Filtro de productos
+
 
 /*
 const test = listaDeProductos();

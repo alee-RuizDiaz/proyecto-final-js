@@ -21,9 +21,37 @@
     "image": "./assets/image/pantalones/pantalon1.webp"
 }, {
     "id": 3,
-    "title": "Reef",
-    "price": 12.599,
-    "description": "Pantalon negro Reef Dunes",
+    "title": "Montagne",
+    "price": 16.599,
+    "description": "Campera Azul Patagonia",
+    "category": "Campera",
+    "image": "./assets/image/camperas/campera1.webp"
+}, {
+    "id": 4,
+    "title": "Wemül",
+    "price": 4.599,
+    "description": "Babucha Negra Wemul Deer",
     "category": "Pantalon",
-    "image": "./assets/image/pantalones/pantalon1.webp"
+    "image": "./assets/image/pantalones/pantalon2.webp"
+}, {
+    "id": 5,
+    "title": "Chelsea Market",
+    "price": 14.599,
+    "description": "Parka Camel Chelsea Market MOI",
+    "category": "Pantalon",
+    "image": "./assets/image/camperas/campera2.webp"
+},{
+    "id": 6,
+    "title": "Trooper",
+    "price": 4.499,
+    "description": "Buzo Azul Trooper Canguro",
+    "category": "Buzo",
+    "image": "./assets/image/buzos/buzo1.webp"
+},{
+    "id": 7,
+    "title": "El Genovés",
+    "price": 4.199,
+    "description": "Camisa Negra Elastizada",
+    "category": "Camisa",
+    "image": "./assets/image/camisas/camisa1.webp"
 }]

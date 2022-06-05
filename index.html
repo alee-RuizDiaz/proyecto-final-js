@@ -13,23 +13,23 @@
 
 <body>
     <div id="particles-js"></div>
-    <div class="carrito-wrapper">
-         Aca va el carrito
+    <div class="cart-wrapper" id="cart">
+        <div class="cerrar">
+            <a href="#" id="closeCart">Cerrar</a>
+        </div>
+        <div>
+            Aca va el carrito
+        </div> 
     </div>
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container">
-                <a class="navbar-brand mx-4" href="#">Mi Tienda</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="container my-2">
+                <a class="navbar-brand mx-5" href="#">Mi Tienda</a>
+                <div class="collaps" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active mx-4" aria-current="page" href="#">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                            <a class="nav-link active mx-5" id="viewCart" aria-current="page" href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
                                     class="bi bi-bag-check" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd"
                                         d="M10.854 8.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708 0z" />
@@ -49,17 +49,17 @@
         </div>
         <div class="containerProductos">
             <div class="filtroPrecios my-0">
-                <button type="button" class="btn btn-outline-secondary mx-3 my-2 px-5 botonFiltro"
+                <button type="button" class="btn btn-outline-secondary mx-1 my-1 px-5 botonFiltro"
                     id="filtroTodos">Todos</button>
-                <button type="button" class="btn btn-outline-secondary mx-3 my-2 px-5 botonFiltro"
+                <button type="button" class="btn btn-outline-secondary mx-1 my-1 px-5 botonFiltro"
                     id="filtroRemeras">Remeras</button>
-                <button type="button" class="btn btn-outline-secondary mx-3 my-2 px-5 botonFiltro"
-                    id="filtroPantalones">Jeans</button>
-                <button type="button" class="btn btn-outline-secondary mx-3 my-2 px-5 botonFiltro"
+                <button type="button" class="btn btn-outline-secondary mx-1 my-1 px-5 botonFiltro"
+                    id="filtroPantalones">Pantalones</button>
+                <button type="button" class="btn btn-outline-secondary mx-1 my-1 px-5 botonFiltro"
                     id="filtroBuzos">Buzos</button>
-                <button type="button" class="btn btn-outline-secondary mx-3 my-2 px-5 botonFiltro"
+                <button type="button" class="btn btn-outline-secondary mx-1 my-1 px-5 botonFiltro"
                     id="filtroCamperas">Camperas</button>
-                <button type="button" class="btn btn-outline-secondary mx-3 my-2 px-5 botonFiltro"
+                <button type="button" class="btn btn-outline-secondary mx-1 my-1 px-5 botonFiltro"
                     id="filtroCamisas">Camisas</button>
             </div>
             <div class="sectionProductos">
@@ -71,9 +71,9 @@
     </div>
     <div class="contariner-fluid navbar-dark bg-dark">
         <div class="container">
-            <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 border-top">
-                <div class="col-md-4 d-flex align-items-center">
-                    <span class="text-muted me-auto ms-4">&copy; 2022 - Alejandro Ruiz Diaz - Proyecto Final Javascript</span>
+            <footer class="d-flex flex-wrap justify-content-center align-items-center py-3">
+                <div class="col-md-12 d-flex align-items-center">
+                    <span class="text-muted ms-4">&copy; 2022 - Alejandro Ruiz Diaz - Proyecto Final Javascript</span>
                 </div>
             </footer>
         </div>
