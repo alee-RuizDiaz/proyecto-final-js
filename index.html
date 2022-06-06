@@ -17,9 +17,41 @@
         <div class="cerrar">
             <a href="#" id="closeCart">Cerrar</a>
         </div>
-        <div>
-            Aca va el carrito
-        </div> 
+        <section class="contariner">
+            <div class="container">
+                <h1 class="text-center h3 my-4">CARRITO</h1>
+                <hr>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="shopping-cart-header ms-4">
+                            <h6>Producto</h6>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="shopping-cart-header">
+                            <h6 class="text-truncate">Precio</h6>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="shopping-cart-header">
+                            <h6>Cantidad</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="shopping-cart-items carritoContainer">
+                    <!-- Contenido del carrito -->
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="shopping-cart-total d-flex align-items-center">
+                            <p class="mb-0 ms-4">Total</p>
+                            <p class="ml-4 mb-0 shoppingCartTotal ms-4">$ 0.00 </p>
+                            <button class="btn btn-success ms-auto me-4 comprarButton" type="button" data-toggle="modal"
+                                data-target="#comprarModal">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+        </section>
     </div>
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -78,8 +110,6 @@
             </footer>
         </div>
     </div>
-
-
     <script src="./assets/vendor/particles/particles.min.js"></script>
     <script src="./assets/vendor/particles/app.js"></script>
     <script src="./assets/vendor/sweetalert/sweetalert.min.js"></script>
