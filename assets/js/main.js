@@ -1,11 +1,5 @@
 // Variables y constantes 
 
-const botonRemeras = document.getElementById("filtroRemeras");
-const botonPantalones = document.getElementById("filtroPantalones");
-const botonTodos = document.getElementById("filtroTodos");
-const botonCamperas = document.getElementById("filtroCamperas");
-const botonCamisas = document.getElementById("filtroCamisas");
-const botonBuzos = document.getElementById("filtroBuzos");
 const shoppingContainer = document.querySelector(".carritoContainer")
 const comprarButton = document.querySelector(".comprarButton");
 let carta = "";
@@ -61,24 +55,6 @@ function AgregarCarrito() {
       });
 }
 
-// Carrito desplegable 
-
-window.onload = function () {
-
-    let body = document.getElementsByTagName('body');
-    let botCart = document.getElementById('viewCart');
-    let closeCart = document.getElementById('closeCart');
-    botCart.onclick = function(e) {
-        e.preventDefault();
-        body[0].classList.toggle("view-cart");
-    }
-    closeCart.onclick = function(e) {
-        e.preventDefault();
-        body[0].classList.toggle("view-cart");
-    }
-
-}
-
 // Funciones para agregar las cartas al carrito
 
 function AgregarCartaAlCarrito(event) {
@@ -93,6 +69,7 @@ function AgregarCartaAlCarrito(event) {
 
 function AgregarItemAlCarrito(itemTitle, itemPrice, itemImg) {
 
+    // const para que no repita los items en el carrito sino que me sume la cantidad del mismo
     const titleItem = shoppingContainer.getElementsByClassName("shoppingCartItemTitle");
     for (let i = 0; i < titleItem.length; i++) {
         if (titleItem[i].innerText === itemTitle) {
@@ -104,13 +81,14 @@ function AgregarItemAlCarrito(itemTitle, itemPrice, itemImg) {
         }
     }
 
+    // Cartas del carrito
     const shoppingCartRow = document.createElement("div");
     const shoppingCartContent = `
             <div class="row shoppingCartItem">
                 <div class="col-6">
                     <div class="shopping-cart-item d-flex align-items-center h-100 border-bottom pb-2 pt-3">
                          <img src=${itemImg} class= "shopping-cart-image ms-4">
-                        <h6 class="shopping-cart-item-title shoppingCartItemTitle text-truncate ml-3 mb-0 ms-4">${itemTitle}</h6>
+                        <h6 class="shopping-cart-item-title shoppingCartItemTitle text-truncate ml-3 mb-0 ms-4 h5">${itemTitle}</h6>
                     </div>
                 </div>
                 <div class="col-2">
@@ -123,7 +101,7 @@ function AgregarItemAlCarrito(itemTitle, itemPrice, itemImg) {
                         class="shopping-cart-quantity d-flex justify-content-between align-items-center h-100 border-bottom pb-2 pt-3">
                         <input class="shopping-cart-quantity-input shoppingCartItemQuantity" type="number"
                             value="1">
-                        <button class="btn btn-danger buttonDelete me-4" type="button">X</button>
+                        <button class="btn btn-danger buttonDelete me-5" type="button">X</button>
                     </div>
                 </div>
             </div>
@@ -139,6 +117,7 @@ function AgregarItemAlCarrito(itemTitle, itemPrice, itemImg) {
     agregarMasItems.addEventListener("change", agregarItemsEnCarrito);
 
     actualizarPrecioTotal();
+
 }
 
 // Actualir el precio del carrito
@@ -177,7 +156,7 @@ function agregarItemsEnCarrito(event) {
     actualizarPrecioTotal();
 }
 
-// Alerta de Comprar en el carrito
+// Alerta de Comprar en el carrito y me borra todos los items
 
 comprarButton.addEventListener("click", comprarButtonClicked);
 
@@ -191,70 +170,3 @@ function comprarButtonClicked() {
         timer: 1400
       });
 }
-
-// Filtro de productos
-
-
-/*
-const test = listaDeProductos();
-
-const listaDeRemeras = test.filter( (la) => la.category.includes("Remera")); // Me filtra la lista de Remeras
-console.log(listaDeRemeras);
-*/
-
-/*
-const listaDePantalones = listaDeProductos.filter( (el) => el.tipo.includes("Pantalon")); // Me Filtra la lista de Pantalones
-//console.log(listaDePantalones);
-*/
-
-
-// Botones de Filtrado
-
-// Boton Todos
-/*
-let botonTodos = document.getElementById("filtroTodos");
-
-botonTodos.addEventListener("click", () => {
-    productosTienda(listaDeProductos);
-});
-*/
-/*
-// Boton Remeras
-let botonRemeras = document.getElementById("filtroRemeras");
-
-botonRemeras.addEventListener("click", () => {
-    listaDeRemeras;
-})
-*/
-/*
-// Boton Pantalones
-let botonPantalones = document.getElementById("filtroPantalones");
-
-botonPantalones.addEventListener ("click", () => {
-    productosTienda(listaDePantalones);
-});
-*/
-// Libreria sweetAlert
-/*
-let carrito = document.querySelector(".buttonCompra");
-
-carrito.addEventListener("click", () => {
-    Swal.fire({
-        icon: 'success',
-        title: 'Su producto fue agregado al carrito',
-        showConfirmButton: false,
-        timer: 1400
-      });
-});
-*/
-
-// Agregar al localStorage 
-/*
-const guardarLocal = (clave, valor) => {
-    localStorage.setItem(clave, valor);
-};
-
-for (const producto of listaDeProductos()) {
-    guardarLocal( producto.id , JSON.stringify(producto));
-};
-*/

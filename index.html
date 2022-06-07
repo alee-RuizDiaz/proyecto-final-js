@@ -13,65 +13,10 @@
 
 <body>
     <div id="particles-js"></div>
-    <div class="cart-wrapper" id="cart">
-        <div class="cerrar">
-            <a href="#" id="closeCart">Cerrar</a>
-        </div>
-        <section class="contariner">
-            <div class="container">
-                <h1 class="text-center h3 my-4">CARRITO</h1>
-                <hr>
-                <div class="row">
-                    <div class="col-6">
-                        <div class="shopping-cart-header ms-4">
-                            <h6>Producto</h6>
-                        </div>
-                    </div>
-                    <div class="col-2">
-                        <div class="shopping-cart-header">
-                            <h6 class="text-truncate">Precio</h6>
-                        </div>
-                    </div>
-                    <div class="col-4">
-                        <div class="shopping-cart-header">
-                            <h6>Cantidad</h6>
-                        </div>
-                    </div>
-                </div>
-                <div class="shopping-cart-items carritoContainer">
-                    <!-- Contenido del carrito -->
-                </div>
-                <div class="row">
-                    <div class="col-12">
-                        <div class="shopping-cart-total d-flex align-items-center">
-                            <p class="mb-0 ms-4">Total</p>
-                            <p class="ml-4 mb-0 shoppingCartTotal ms-4">$ 0.00 </p>
-                            <button class="btn btn-success ms-auto me-4 comprarButton" type="button" data-toggle="modal"
-                                data-target="#comprarModal">Comprar</button>
-                        </div>
-                    </div>
-                </div>
-        </section>
-    </div>
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container my-2">
-                <a class="navbar-brand mx-5" href="#">Mi Tienda</a>
-                <div class="collaps" id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active mx-5" id="viewCart" aria-current="page" href="#">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
-                                    class="bi bi-bag-check" viewBox="0 0 16 16">
-                                    <path fill-rule="evenodd"
-                                        d="M10.854 8.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708 0z" />
-                                    <path
-                                        d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z" />
-                                </svg>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+            <div class="container my-3">
+                <a class="navbar-brand mx-auto" href="#">MI TIENDA</a>
             </div>
         </nav>
     </header>
@@ -80,24 +25,49 @@
             <img class="img-fluid imgBanner" src="assets/image/banners/banner-indumentaria.jpg" alt="Indumentaria">
         </div>
         <div class="containerProductos">
-            <div class="filtroPrecios my-0">
-                <button type="button" class="btn btn-outline-secondary mx-1 my-1 px-5 botonFiltro"
-                    id="filtroTodos">Todos</button>
-                <button type="button" class="btn btn-outline-secondary mx-1 my-1 px-5 botonFiltro"
-                    id="filtroRemeras">Remeras</button>
-                <button type="button" class="btn btn-outline-secondary mx-1 my-1 px-5 botonFiltro"
-                    id="filtroPantalones">Pantalones</button>
-                <button type="button" class="btn btn-outline-secondary mx-1 my-1 px-5 botonFiltro"
-                    id="filtroBuzos">Buzos</button>
-                <button type="button" class="btn btn-outline-secondary mx-1 my-1 px-5 botonFiltro"
-                    id="filtroCamperas">Camperas</button>
-                <button type="button" class="btn btn-outline-secondary mx-1 my-1 px-5 botonFiltro"
-                    id="filtroCamisas">Camisas</button>
-            </div>
             <div class="sectionProductos">
                 <div class="productosFlex mx-5" id="productos">
-
+                    <!-- Contenido de productos -->
                 </div>
+            </div>
+            <div>
+                <section class="contariner">
+                    <div class="container">
+                        <div class="textCarrito py-1">
+                            <h1 class="text-center h4 my-2">CARRITO</h1>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="shopping-cart-header ms-5">
+                                    <h5>Producto</h5>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="shopping-cart-header">
+                                    <h5 class="text-truncate">Precio</h5>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="shopping-cart-header">
+                                    <h5>Cantidad</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="shopping-cart-items carritoContainer">
+                            <!-- Contenido del carrito -->
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="shopping-cart-total d-flex align-items-center">
+                                    <p class="mb-0 ms-5 h4">Total</p>
+                                    <p class="ml-4 mb-0 shoppingCartTotal ms-4 h5">$ 0.00 </p>
+                                    <button class="btn btn-success ms-auto me-5 px-4 py-2 comprarButton" type="button" data-toggle="modal"
+                                        data-target="#comprarModal">Comprar</button>
+                                </div>
+                            </div>
+                        </div>
+                </section>
             </div>
         </div>
     </div>
